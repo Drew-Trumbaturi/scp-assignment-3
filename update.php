@@ -104,24 +104,37 @@
     <!-- Footer -->
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <div class="col-md-4 d-flex align-items-center">
-                <a href="index.php"><img src="images/scp-logo-signature.png" alt="scp-sml-logo"></a>
-                <span class="text-muted">© 2021 SCP Foundation, Inc</span>
+            <div class="row">
+                <div class="col-sm-4 center">
+                    <a href="index.php"><img src="images/scp-logo-signature.png" alt="scp-sml-logo"></a>  
+                    <span class="text-muted">© 2021 SCP Foundation, Inc</span>
+                </div>
+                
+                <div class="col-sm-4 center">
+                    <ul class="nav justify-content-center pb-3 mb-3">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="index.php">Home</a>
+                        </li>
+                
+                        <?php foreach($return as $link): ?>
+                            <li class="nav-item">
+                                <a class="nav-link px-2 text-muted" href="index.php?link='<?php echo $link['item']; ?>'"><?php echo $link['item']; ?></a>
+                            </li>
+                    
+                        <?php endforeach; ?>
+                        <li class="nav-item">
+                            <a class="nav-link px-2 text-muted" href="form.php">Add an SCP</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="col-sm-4 center">
+                    <ul class="nav justify-content-end list-unstyled d-flex">
+                        <li class="text-muted">Website Powered by Derkastan Ltd.</li>
+                        <li class="text-muted" style="font-size:smaller">*This website is a work of fiction and should not be taken seriously.</li>
+                    </ul>
+                </div>
             </div>
-
-            <ul class="nav justify-content-center pb-3 mb-3" style="font-size: large;">
-                <li class="nav-item"><a href="index.php" class="nav-link px-2 text-muted">Home</a></li>
-                <li class="nav-item"><a href="scp_catalog.php" class="nav-link px-2 text-muted">SCP Catalog</a></li>
-                <li class="nav-item"><a href="guide_list.php" class="nav-link px-2 text-muted">Guide</a></li>
-                <li class="nav-item"><a href="about.php" class="nav-link px-2 text-muted">About</a></li>
-                <li class="nav-item"><a href="contact.php" class="nav-link px-2 text-muted">Contact</a></li>
-            </ul>
-
-            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                <li class="text-muted">Website Powered by Derkastan Ltd.</li>
-                <li class="text-muted" style="font-size:smaller">*This website is a work of fiction and should not be
-                    taken seriously.</li>
-            </ul>
         </footer>
     </div>
 
